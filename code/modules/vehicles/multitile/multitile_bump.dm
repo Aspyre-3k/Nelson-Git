@@ -641,9 +641,11 @@
 			return
 		if(health > 0)
 			take_damage_type(100, "blunt", C)
+			visible_message(SPAN_DANGER("\The [A] ramms \the [src]!"))
+			log_attack("\The [src] was rammed by [key_name(C)].")
 		else
 			try_move(C.dir, force=TRUE)
-			playsound(loc, 'sound/effects/metal_crash.ogg', 35)
 			visible_message(SPAN_DANGER("The sheer force of the impact makes \the [src] slide back!"))
-			log_attack("\The [src] was rammed by [key_name(C)].")
-			interior_crash_effect()
+			log_attack("\The [src] was rammed and pushed by [key_name(C)].")
+		playsound(loc, 'sound/effects/metal_crash.ogg', 35)
+		interior_crash_effect()
