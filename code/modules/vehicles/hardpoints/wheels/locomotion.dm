@@ -12,9 +12,9 @@
 
 /obj/item/hardpoint/locomotion/deactivate()
 	owner.move_delay = initial(owner.move_delay)
-	owner.move_delay = initial(owner.move_max_momentum)
-	owner.move_delay = initial(owner.move_momentum_build_factor)
-	owner.move_delay = initial(owner.move_turn_momentum_loss_factor)
+	owner.move_max_momentum = initial(owner.move_max_momentum)
+	owner.move_momentum_build_factor = initial(owner.move_momentum_build_factor)
+	owner.move_turn_momentum_loss_factor = initial(owner.move_turn_momentum_loss_factor)
 
 /obj/item/hardpoint/locomotion/on_install(var/obj/vehicle/multitile/V)
 	if(move_delay)
